@@ -1,0 +1,89 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* FUNDO */
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(95, 95, 197);
+}
+
+/* CARD */
+.container {
+  background: #f4f4f4;
+  width: 420px;
+  padding: 40px 30px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* TITULO */
+h1 {
+  color: #4a628a;
+  font-size: 32px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.sub {
+  color: #777;
+  margin-bottom: 30px;
+}
+
+/* IMAGEM */
+.logo {
+  width: 130px;
+  margin: 10px auto 25px;
+  display: block;
+}
+
+/* LISTA */
+.section-title {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+ul li {
+  padding: 10px;
+  color: #666;
+  border-bottom: 1px solid #ddd;
+}
+
+/* BOTÃO */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #ff6f55;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #ff5537;
+  transform: scale(1.05);
+}
+
+/* RODAPÉ */
+.footer {
+  margin-top: 20px;
+  color: #999;
+  font-size: 14px;
+}
