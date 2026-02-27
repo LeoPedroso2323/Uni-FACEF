@@ -1,25 +1,125 @@
-body { 
-	background-color: #cacaca; 
-	display: flex; 
-	justify-content: center;
-	align-items: center; 
-	height: 100vh; 
-	font-family: 
-	Arial, sans-serif; 
-} 
-/*O PONTO REFERENCIA O CALSS*/
-.card { 
-	background: rgb(243, 243, 243); 
-	padding: 20px; 
-	border-radius: 10px; 
-	box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-	text-align: center; 
-} 
-button { 
-	background-color: red; 
-	color: white; 
-	border: none; 
-	padding: 10px 20px; 
-	border-radius: 5px; 
-	cursor: pointer; 
+/* Importando uma fonte moderna e técnica */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+  /* Variáveis para consistência e fácil manutenção */
+  --primary-color: #6366f1; /* Indigo moderno e tecnológico */
+  --primary-hover: #4f46e5;
+  --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-gradient);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Animação de entrada do cartão */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px); /* Efeito sutil de vidro */
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  width: 100%;
+  max-width: 380px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  
+  /* Aplicação da animação */
+  animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover no Card: Elevação suave */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+.foto {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 24px;
+  display: block;
+  object-fit: cover;
+  /* Borda com gradiente ou sombra para destacar */
+  border: 4px solid #fff;
+  box-shadow: 0 0 0 4px var(--primary-color), var(--shadow-sm);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Efeito de zoom e rotação na foto ao passar o mouse */
+.card:hover .foto {
+  transform: scale(1.1) rotate(5deg);
+}
+
+h1 {
+  color: var(--text-main);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.025em;
+}
+
+p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  width: 100%; /* Botão full-width fica excelente no mobile */
+  padding: 14px 28px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 14px 0 rgba(99, 102, 241, 0.39);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito de brilho/glow no hover do botão */
+button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Responsividade básica */
+@media (max-width: 480px) {
+  .card {
+    padding: 30px 20px;
+  }
 }
